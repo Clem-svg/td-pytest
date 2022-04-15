@@ -2,7 +2,7 @@ from conftest import client
 import pytest
 from flask import Flask
 
-@pytest.mark.Success
+@pytest.mark.Successful
 def test_homepage(client: Flask):
     response = client.get("/")
     assert b"Hello, World" in response.data

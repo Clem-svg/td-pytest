@@ -28,9 +28,9 @@ def test_content_other_page(client, page: int):
 @pytest.mark.Successful
 @pytest.mark.parametrize("value", [5, 45, 120])
 def test_if_exp_page_found(client, value: int):
-    receivedResponse = client.get("/exp?value=" + str(value))
-    expectedResponse = "Exposant 2 de " + str(value) + " : " + str(pow(value, 2))
-    assert expectedResponse() in receivedResponse.data
+    response = client.get("/exp?value=" + str(value))
+    expected = "Exposant 2 de " + str(value) + " : " + str(pow(value, 2))
+    assert expected.encode() in response.data
 
 @pytest.mark.Failed
 @pytest.mark.parametrize("value", [62, -4, "helloWorld"])
