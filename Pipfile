@@ -5,6 +5,10 @@ name = "pypi"
 
 [packages]
 flask = "*"
+pytest = "*"
+pytest-html = "*"
+pytest-mock = "*"
+locust = "*"
 
 [dev-packages]
 
